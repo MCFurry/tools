@@ -8,7 +8,9 @@ get_fzf_latest_release() {
   sed -E 's/.*"([^"]+)".*/\1/'
 }
 
-wget https://github.com/junegunn/fzf-bin/releases/download/$(get_fzf_latest_release)/fzf-$(get_fzf_latest_release)-linux_amd64.tgz
-tar -zxvf fzf-$(get_fzf_latest_release)-linux_amd64.tgz
+VER=$(get_fzf_latest_release)
+
+wget https://github.com/junegunn/fzf-bin/releases/download/${VER}/fzf-${VER}-linux_amd64.tgz
+tar -zxvf fzf-${VER}-linux_amd64.tgz
 sudo mv fzf /usr/local/bin/
-rm fzf-$(get_fzf_latest_release)-linux_amd64.tgz
+rm fzf-${VER}-linux_amd64.tgz

@@ -9,5 +9,8 @@ get_bat_latest_release() {
   sed 's/^.//'
 }
 
-wget https://github.com/sharkdp/bat/releases/download/v$(get_bat_latest_release)/bat_$(get_bat_latest_release)_amd64.deb
-sudo dpkg --install bat_$(get_bat_latest_release)_amd64.deb
+VER=$(get_bat_latest_release)
+
+wget https://github.com/sharkdp/bat/releases/download/v${VER}/bat_${VER}_amd64.deb
+sudo dpkg --install bat_${VER}_amd64.deb
+rm bat_${VER}_amd64.deb
