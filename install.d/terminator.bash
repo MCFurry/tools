@@ -10,4 +10,4 @@ sudo apt-get install terminator
 echo "Adding useful plugins"
 # First check if folder exists and create otherwise
 mkdir -p ~/.config/terminator/plugins
-wget https://raw.githubusercontent.com/choffee/terminator-plugins/master/searchplugin.py -P ~/.config/terminator/plugins
+wget https://raw.githubusercontent.com/choffee/terminator-plugins/master/searchplugin.py -O ~/.config/terminator/plugins/searchplugin.py
