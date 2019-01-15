@@ -15,4 +15,4 @@ then
 fi
     sudo apt-get update
 
-    sudo apt-get install --assume-yes balena-etcher-electron
+    sudo apt-get install --assume-yes --allow-unauthenticated balena-etcher-electron
