@@ -1,20 +1,18 @@
 #!/bin/bash
 
 bash_alias_check() {
-  grep ".mcfurry/bash_aliases.sh" ~/.bashrc
+  grep "~/.my_bash_aliases.sh" ~/.bashrc
 }
 
 # cd to directory
 cd /tmp/tools
 
-echo "Creating directory for persisting files.."
-mkdir -p ~/.mcfurry
 echo "Copy bash_aliases file.."
-cp bash_aliases.sh ~/.mcfurry/bash_aliases.sh
+yes | cp -rf my_bash_aliases.sh ~/.my_bash_aliases.sh
 
-if [[ $(bash_alias_check) != *"bash_aliases.sh"* ]]; then
+if [[ $(bash_alias_check) != *".my_bash_aliases.sh"* ]]; then
   echo "Adding to .bashrc"
-  echo -e "\nsource ~/.mcfurry/bash_aliases.sh" >> ~/.bashrc
+  echo -e "\nsource ~/.my_bash_aliases.sh" >> ~/.bashrc
 fi
 
 echo "Installing aptitude packages.."
