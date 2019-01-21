@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Adding terminator ppa.."
-sudo add-apt-repository ppa:gnome-terminator -y
+sudo add-apt-repository ppa:gnome-terminator/nightly-gtk3 -y
 
 echo "Installing terminator.."
 sudo apt-get update
