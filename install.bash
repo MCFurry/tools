@@ -16,8 +16,8 @@ if [[ $(bash_alias_check) != *".my_bash_aliases.sh"* ]]; then
 fi
 
 echo "Installing aptitude packages.."
-sudo apt-get update
-sudo apt-get install -y $(grep -vE "^\s*#" /tmp/tools/packages.list  | tr "\n" " ")
+sudo apt update
+sudo apt install -y $(grep -vE "^\s*#" /tmp/tools/packages.list  | tr "\n" " ")
 
 echo "Installing additional packages.."
 for file in /tmp/tools/install.d/*
