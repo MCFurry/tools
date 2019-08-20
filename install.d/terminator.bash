@@ -5,7 +5,7 @@ sudo add-apt-repository ppa:gnome-terminator/nightly-gtk3 -y
 
 echo "Installing terminator.."
 sudo apt-get update
-sudo apt-get install terminator
+sudo apt-get install -y terminator
 
 echo "Adding useful plugins"
 # First check if folder exists and create otherwise
