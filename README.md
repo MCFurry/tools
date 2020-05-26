@@ -1,6 +1,8 @@
 # Tools
 Handy tooling for linux system
 
+Prerequisites: git, curl
+
 ## Installation
 Run the following commands in a shell:
 ```bash

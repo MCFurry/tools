@@ -2,7 +2,7 @@
 
 # Install vscode via snap
 snap install code --classic
-sudo apt install default-jre
+sudo apt install -y default-jre
 
 # Install ros extensions
 code --install-extension ms-vscode.cpptools

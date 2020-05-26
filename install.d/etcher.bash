@@ -7,7 +7,7 @@ then
     echo "Adding etcher ppa"
 
     # Required for adding https sources to apt
-    sudo apt install apt-transport-https
+    sudo apt install --assume-yes apt-transport-https
 
     echo -e "deb https://deb.etcher.io stable etcher" | sudo tee $listfile
 
