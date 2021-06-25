@@ -1,18 +1,16 @@
 #!/bin/bash
 
-listfile="/etc/apt/sources.list.d/etcher.list"
+# Find out latest bat release
+# Thanks to: https://github.com/lukechilds
+get_etcher_latest_release() {
+  curl --silent "https://api.github.com/repos/balena-io/etcher/releases/latest" |
+  grep '"tag_name":' |
+  sed -E 's/.*"([^"]+)".*/\1/' |
+  sed 's/^.//'
+}
 
-if [ ! -f $listfile ]
-then
-    echo "Adding etcher ppa"
+VER=$(get_etcher_latest_release)
 
-    # Required for adding https sources to apt
-    sudo apt install --assume-yes apt-transport-https
-
-    echo -e "deb https://deb.etcher.io stable etcher" | sudo tee $listfile
-
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
-fi
-    sudo apt update
-
-    sudo apt install --assume-yes --allow-unauthenticated balena-etcher-electron
+wget https://github.com/balena-io/etcher/releases/download/v${VER}/balena-etcher-electron_${VER}_amd64.deb
+sudo dpkg --install balena-etcher-electron_${VER}_amd64.deb
+rm balena-etcher-electron_${VER}_amd64.deb
